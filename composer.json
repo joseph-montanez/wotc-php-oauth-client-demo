@@ -1,0 +1,25 @@
+{
+    "name": "wotc/php-oauth-client-demo",
+    "description": "OAuth 2.0 Client Library",
+    "license": "MIT",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.1",
+        "league/oauth2-client": "2.3.0",
+        "ext-json": "*"
+    },
+    "authors": [
+        {
+            "name": "Joseph Montanez",
+            "email": "jm@comentum.com"
+        }
+
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wotc\\Api\\Client\\": "src/"
+        }
+    }
+}
