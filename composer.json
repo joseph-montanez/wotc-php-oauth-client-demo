@@ -7,8 +7,9 @@
     },
     "require": {
         "php": "^7.1",
-        "league/oauth2-client": "2.3.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "fzaninotto/faker": "v1.8.0",
+        "league/oauth2-client": "2.3.0"
     },
     "authors": [
         {

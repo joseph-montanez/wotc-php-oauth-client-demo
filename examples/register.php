@@ -26,4 +26,4 @@ $result = $api->post(
     ]
 );
 
-print_r(json_encode($result['user']));
+print_r(json_encode($result, JSON_PRETTY_PRINT));

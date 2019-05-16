@@ -252,11 +252,14 @@ class Api
         if ($response->getStatusCode() >= 200 && $response->getStatusCode() < 300) {
             $content = $response->getBody()->getContents();
             $json    = json_decode($content, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                $json = $content;
+            }
         } else if ($response->getStatusCode() >= 400 && $response->getStatusCode() <= 500) {
             $content = $response->getBody()->getContents();
             $json    = json_decode($content, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
-                $json = null;
+                $json = $content;
             }
         }
 
