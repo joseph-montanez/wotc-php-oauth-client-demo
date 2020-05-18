@@ -44,6 +44,7 @@ $result = $api->put('employees', $data);
 var_dump($result['id']);
 $employee_id = $result['id'];
 $employee_ids[] = $result['id'];
+exit;
 
 
 $expected = [

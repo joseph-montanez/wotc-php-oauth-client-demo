@@ -7,7 +7,8 @@ $api = get_api();
 //---------------------------------
 //-- Upload a document
 //---------------------------------
-$data   = file_get_contents(__DIR__ . '/composer.phar');
+$data   = file_get_contents(__DIR__ . '/../composer.json');
+//$data   = file_get_contents('/Users/josephmontanez/Downloads/samples1.exe');
 $result = $api->post(
     'documents/upload',
     $data,
@@ -20,6 +21,7 @@ $result = $api->post(
 
 print_r($result);
 $document_id = $result['id'];
+exit;
 
 //---------------------------------
 //-- Update a document

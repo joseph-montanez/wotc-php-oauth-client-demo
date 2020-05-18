@@ -5,8 +5,8 @@ require_once __DIR__ . '/config.php';
 $api = get_api();
 
 //---------------------------------
-//-- List All Locations
+//-- List All Employees
 //---------------------------------
-$result = $api->get('locations');
+$result = $api->get('employees/4129/wotc');
 
 print_r($result);

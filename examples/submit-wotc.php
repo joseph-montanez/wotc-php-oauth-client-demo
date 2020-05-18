@@ -19,6 +19,7 @@ $form['address_street'] = $faker->streetAddress;
 $form['address_street2'] = "";
 $form['address_city'] = $faker->city;
 $form['address_state'] = 'CA';
+$form['contact_method'] = 'phone';
 $form['address_county'] = "";
 $form['address_zipcode'] = $faker->postcode;
 $form['phone'] = "760-" . $faker->numberBetween(100, 999) . "-" . $faker->numberBetween(1000, 9999);
@@ -32,7 +33,7 @@ $form['position'] = "Shift Manager";
 $form['applied_on'] = $now->format($fmt);
 $form['has_startdate'] = false;
 $form['rehire'] = false;
-/*
+
 $form['signature_date'] = $now->format($fmt);
 $form['signature_data'] = "[[{\"x\":192.5,\"y\":45,\"time\":1556503473847,\"color\":\"black\"},{\"x\":191.5," .
     "\"y\":45,\"time\":1556503473849,\"color\":\"black\"},{\"x\":191.5,\"y\":45,\"time\":1556503473866," .
@@ -159,7 +160,6 @@ $form['signature_image'] = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArgAAA
     "ckAQIECBAgQIBAOwEBt52tmgkQIECAAAECBDoICLgd0DVJgAABAgQIECDQTkDAbWerZgIECBAgQIAAgQ4CAm4HdE0SIECAAAE" .
     "CBAi0ExBw29mqmQABAgQIECBAoIOAgNsBXZMECBAgQIAAAQLtBATcdrZqJkCAAAECBAgQ6CAg4HZA1yQBAgQIECBAgEA7gf8D0" .
     "R7d2AQDnp0AAAAASUVORK5CYII=";
-*/
 $form['rehire'] = $faker->boolean;
 
 if ($form['rehire']) {

@@ -5,8 +5,9 @@ require_once __DIR__ . '/config.php';
 $api = get_api();
 
 //---------------------------------
-//-- List All Locations
+//-- Update Webhook
 //---------------------------------
-$result = $api->get('locations');
-
+$result = $api->get(
+    'webhooks'
+);
 print_r($result);

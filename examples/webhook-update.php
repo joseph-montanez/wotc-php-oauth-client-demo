@@ -5,8 +5,12 @@ require_once __DIR__ . '/config.php';
 $api = get_api();
 
 //---------------------------------
-//-- List All Locations
+//-- Update Webhook
 //---------------------------------
-$result = $api->get('locations');
-
+$result = $api->put(
+    'webhooks/4',
+    [
+        "secret" => "tiptap",
+    ]
+);
 print_r($result);

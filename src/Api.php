@@ -236,7 +236,7 @@ class Api
         );
 
         try {
-            $response = $client->send($request);
+            $response = $client->send($request, ['verify' => false]);
         } catch (GuzzleException $e) {
             /**
              * @var $response1 \GuzzleHttp\Psr7\Response
@@ -273,6 +273,22 @@ class Api
     public function setAccessToken(string $access_token): void
     {
         $this->access_token = $access_token;
+    }
+
+
+    /**
+     * Put to url
+     *
+     * @param string $url     The URL to access
+     * @param array  $data    The data to send as body
+     * @param array  $headers The extra headers
+     * @param bool   $json    To encode the body as json
+     *
+     * @return array|mixed
+     */
+    public function delete($url, $data = [], $headers = [], $json = true)
+    {
+        return $this->send('DELETE', $url, $data, $headers, $json);
     }
 
 }

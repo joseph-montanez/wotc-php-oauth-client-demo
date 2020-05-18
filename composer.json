@@ -16,7 +16,6 @@
             "name": "Joseph Montanez",
             "email": "jm@comentum.com"
         }
-
     ],
     "autoload": {
         "psr-4": {

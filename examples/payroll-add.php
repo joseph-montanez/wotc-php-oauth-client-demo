@@ -10,7 +10,8 @@ $api = get_api();
 $result = $api->post(
     'hours-wages',
     [
-        'employee_id' => 1,
+        'company_id' => 480,
+        'employee_id' => 3804,
         'start_date'  => '2018-01-01',
         'total_hours' => '650',
         'total_wages' => '14000',

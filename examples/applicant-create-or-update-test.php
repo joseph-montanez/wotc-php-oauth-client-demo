@@ -1,10 +1,10 @@
 <?php
+//ini_set('memory_limit', 0);
 
 require_once __DIR__ . '/config.php';
 
 $api = get_api();
 $faker = Faker\Factory::create();
-
 $applicant_ids = [];
 
 
@@ -25,26 +25,37 @@ $dob = $faker->dateTimeBetween('-60 years', '-18 years');
 $now = new DateTime();
 $ssn = $faker->numberBetween(222, 999) . '-' . $faker->numberBetween(22, 99) . '-' . $faker->numberBetween(2222, 9999);
 //$ssn = '11-111-1111';
-
+//$phone = '213-555-4745';
 var_dump($phone);
 
 //-- Try with first put attempt, should be a new record
 $data = [
     'first_name' => $faker->firstName,
     'last_name'  => $faker->lastName,
-    "email"      => $faker->email,
+    "email"      => null,
+//    "email"      => $faker->email,
+//    "phone"      => '',
     "phone"      => $phone,
     "dob"        => $dob->format('m/d/Y'),
     "applied_on" => $now->format('m/d/Y'),
     "started_on" => $now->format('m/d/Y'),
-    "is_rehire"  => true,
+    "is_rehire"  => false,
     "ssn"        => $ssn,
 ];
 echo print_r($data), PHP_EOL;
 $result = $api->put('applicants', $data);
-var_dump($result['id']);
-$employee_id = $result['id'];
-$applicant_ids[] = $result['id'];
+var_dump($result['id'] ?? '');
+//unset($data['email']);
+$data['email'] = $faker->email;
+$data['phone'] = null;
+$result = $api->put('applicants', $data);
+var_dump($data, $result);
+//$employee_id = $result['id'];
+//$applicant_ids[] = $result['id'];
+
+//$data['is_rehire'] = false;
+//$result = $api->put('applicants', $data);
+//var_dump($result);
 
 exit;
 

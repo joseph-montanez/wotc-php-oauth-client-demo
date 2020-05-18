@@ -19,8 +19,6 @@ $result = $api->get(
 );
 
 print_r($result);
-exit;
-
 
 
 $result = $api->get(
@@ -50,10 +48,20 @@ print_r($result);
 
 
 
+//$result = $api->get(
+//    'applicants/changes/wotc/status?' . http_build_query(
+//        [
+//            'end_date' => 'Yes',
+//        ]
+//    )
+//);
+//
+//
 $result = $api->get(
     'applicants/changes/wotc/status?' . http_build_query(
         [
-            'end_date' => 'Yes',
+            'end_date' => (new DateTime('-6 days'))->format('Y-m-d'),
+            'status' => 'Pre-Qualified',
         ]
     )
 );
